@@ -7,8 +7,7 @@ let modelo;
 
 let webcam;
 
-const video = document.getElementById("video");
-
+const video = document.getElementById("webcam");
 const constraints = {
   audio:false, 
   video:{
@@ -16,21 +15,22 @@ const constraints = {
     height:480
   }
 }
-
 async function initVideo(){
-  try{
-    const streamVideo = await navigator.mediaDevices.getUserMedia(constraints)
-    handleSucces(streamVideo)
+    try{
+      const streamVideo = await navigator.mediaDevices.getUserMedia(constraints)
+      handleSucces(streamVideo)
+    }
+    catch(e){
+      alert(e)
+    }
   }
-  catch(e){
-    alert(e)
+  // on succes
+  function handleSucces(streamVideo){
+    window.stream = streamVideo;
+    video.srcObject = streamVideo;
   }
-}
-// on succes
-function handleSucces(streamVideo){
-  window.stream = streamVideo;
-  video.srcObject = streamVideo;
-}
+
+
 
 initVideo()
 
