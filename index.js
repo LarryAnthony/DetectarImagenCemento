@@ -44,8 +44,7 @@ async function app(){
         audio: false,
         width: { ideal: 4096 },
         height: { ideal: 2160 },
-        facingMode: {
-          ideal: "environment"}
+        facingMode: "environment"
       }})
     modelo = await fetch("ModeloCemento.txt")
     modelo = await modelo.text();
