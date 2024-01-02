@@ -39,7 +39,10 @@ async function app(){
     if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
         console.log("Let's get this party started")
     }
-    navigator.mediaDevices.getUserMedia({video: true})
+    navigator.mediaDevices.getUserMedia({
+      video: {
+        facingMode: "environment"
+      }})
     modelo = await fetch("ModeloCemento.txt")
     modelo = await modelo.text();
     // console.log(modelo);
