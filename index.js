@@ -42,7 +42,7 @@ async function app(){
     navigator.mediaDevices.getUserMedia({
       video: {
         facingMode: {
-          exact: "environment"}
+          ideal: "environment"}
       }})
     modelo = await fetch("ModeloCemento.txt")
     modelo = await modelo.text();
