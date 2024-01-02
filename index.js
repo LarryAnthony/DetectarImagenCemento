@@ -12,7 +12,10 @@ const constraints = {
   audio:false, 
   video:{
     width:640,
-    height:480
+    height:480,
+    facingMode: {
+      exact: 'environment'
+    }
   }
 }
 async function initVideo(){
