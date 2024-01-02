@@ -41,6 +41,9 @@ async function app(){
     }
     navigator.mediaDevices.getUserMedia({
       video: {
+        audio: false,
+        width: { ideal: 4096 },
+        height: { ideal: 2160 },
         facingMode: {
           ideal: "environment"}
       }})
